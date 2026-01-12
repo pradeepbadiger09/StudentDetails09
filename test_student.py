@@ -1,5 +1,4 @@
 import pytest
-
 from student import calculate_grade
 
 
@@ -44,7 +43,6 @@ def test_boundary_conditions(avg, expected):
 
 
 def test_invalid_negative_marks():
-    # Optional: still returns F for negative values6
     assert calculate_grade(-10) == "F"
 
 
