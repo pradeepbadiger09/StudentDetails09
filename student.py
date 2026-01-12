@@ -1,5 +1,3 @@
-# student_grade.py
-
 def calculate_grade(avg):
     if 90 <= avg <= 100:
         return "S"
@@ -18,17 +16,14 @@ def calculate_grade(avg):
 def main():
     print("=== Student Grade Management System ===")
 
-    name = input("Enter student name: ")
-    department = input("Enter department: ")
-    semester = input("Enter semester: ")
+    # Static data for CI/CD (no input)
+    name = "Pradeep"
+    department = "bca"
+    semester = "3"
 
-    try:
-        m1 = float(input("Enter marks in Subject 1: "))
-        m2 = float(input("Enter marks in Subject 2: "))
-        m3 = float(input("Enter marks in Subject 3: "))
-    except ValueError:
-        print("Invalid marks! Please enter numbers only.")
-        return
+    m1 = 85
+    m2 = 90
+    m3 = 80
 
     total = m1 + m2 + m3
     average = total / 3
