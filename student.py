@@ -1,3 +1,5 @@
+import os
+
 def calculate_grade(avg):
     if 90 <= avg <= 100:
         return "S"
@@ -16,14 +18,14 @@ def calculate_grade(avg):
 def main():
     print("=== Student Grade Management System ===")
 
-    # Static data for CI/CD (no input)
-    name = "Pradeep"
-    department = "bca"
-    semester = "3"
+    # Read Jenkins parameters (with defaults)
+    name = os.getenv("Name", "Pradeep")
+    department = os.getenv("Deparement", "BCA")
+    semester = os.getenv("Semester", "3")
 
-    m1 = 85
-    m2 = 90
-    m3 = 80
+    m1 = int(os.getenv("M1", 85))
+    m2 = int(os.getenv("M2", 90))
+    m3 = int(os.getenv("M3", 80))
 
     total = m1 + m2 + m3
     average = total / 3
