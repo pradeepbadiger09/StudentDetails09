@@ -1,11 +1,14 @@
-#Use official python image
-from python:3.11-slim
+# Use official Python image
+FROM python:3.11-slim
 
 # Set working directory
-workdir /app
+WORKDIR /app
 
-#copy all the files to container
-copy . .
+# Copy project files
+COPY . .
 
-#command to run Python file
-cmd ["python","student.py"]
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run application
+CMD ["python", "student.py"]
